@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLADIATORS MINDSET - Transformation Humaine & Organisationnelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .foci-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+        }
+        
+        .foci-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.1);
+        }
+        
+        .program-card {
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating-badge {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo + Title -->
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo Gladiators Mindset" class="w-12 h-12 object-contain rounded-full border-2 border-amber-500">
+                
+
+                <div class="flex items-center space-x-2">
+
+                    <h1 class="text-2xl font-bold">GLADIATORS <span class="text-amber-500">MINDSET</span></h1>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="nav-link hover:text-amber-500">Accueil</a>
+                <a href="#apropos" class="nav-link hover:text-amber-500">À Propos</a>
+                <a href="#vision" class="nav-link hover:text-amber-500">Notre Vision</a>
+                <a href="#programmes" class="nav-link hover:text-amber-500">Programmes</a>
+                <a href="#valeurs" class="nav-link hover:text-amber-500">Valeurs FOCI</a>
+                <a href="#contact" class="nav-link hover:text-amber-500">Contact</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-gray-800 py-4 px-4" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#accueil" class="hover:text-amber-500">Accueil</a>
+                <a href="#apropos" class="hover:text-amber-500">À Propos</a>
+                <a href="#vision" class="hover:text-amber-500">Notre Vision</a>
+                <a href="#programmes" class="hover:text-amber-500">Programmes</a>
+                <a href="#valeurs" class="hover:text-amber-500">Valeurs FOCI</a>
+                <a href="#contact" class="hover:text-amber-500">Contact</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="accueil" class="hero text-white py-20 md:py-32 flex items-center">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-block bg-amber-500 text-white px-4 py-2 rounded-full mb-4 floating-badge">
+                <span class="font-bold">"Deviens ton propre champion. Bats-toi pour ta vision."</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">FORGEZ VOTRE <span class="text-amber-500 glow-text">ESPRIT DE GLADIATEUR</span></h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">La plateforme africaine du développement de la personne, dédiée au leadership, à la discipline, à la clarté et à la résilience.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#programmes" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300">Découvrir nos programmes</a>
+                <a href="#contact" class="bg-transparent hover:bg-white hover:text-gray-900 border-2 border-white text-white font-bold py-3 px-8 rounded-full transition duration-300">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="apropos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Marc Aurèle DEGLA" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">MARC AURÈLE <span class="text-amber-500">DEGLA</span></h2>
+                    <p class="text-gray-600 mb-6">Architecte de transformation humaine et organisationnelle, véritable éveilleur de potentiels cachés. Avec plus de dix années d'expérience sur le terrain au Bénin, au Niger et en Afrique de l'Ouest, il a accompagné des entrepreneurs, des leaders et des communautés à révéler la force qui sommeille en eux et à structurer leurs réussites avec sagesse et détermination.</p>
+                    <p class="text-gray-600 mb-6">Expert en leadership, développement personnel, stratégie commerciale et ingénierie de formation, Marc Aurèle est reconnu comme un catalyseur de changement et un bâtisseur de résilience, capable d'insuffler clarté, discipline et vision ambitieuse à ses partenaires.</p>
+                    <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500 mb-6">
+                        <p class="text-gray-800 italic">"Ses racines béninoises (culture Mahi), son ancrage nigérien (souche haoussa), et sa connexion profonde à l'Afrique de l'Ouest nourrissent son engagement à offrir des solutions authentiques, adaptées à nos réalités et à notre histoire."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vision & Mission Section -->
+    <section id="vision" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">NOTRE <span class="text-amber-500">VISION & MISSION</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">La raison d'être de GLADIATORS MINDSET</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Vision Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-eye text-amber-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Vision</h3>
+                    </div>
+                    <p class="text-gray-600">Devenir la référence africaine incontournable du leadership, de la discipline, de la clarté et de la résilience, en instaurant une culture durable de la performance positive.</p>
+                </div>
+                
+                <!-- Mission Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-bullseye text-amber-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Mission</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Armer les individus, équipes et organisations avec des outils concrets et des expériences immersives pour :</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                            <span>Cultiver la discipline qui forge des habitudes solides et transformatrices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                            <span>Développer la clarté qui éclaire chaque décision et action</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                            <span>Renforcer la résilience pour surmonter toutes les épreuves</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                            <span>Créer un impact positif durable dans leur environnement personnel et professionnel</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Philosophy Section -->
+            <div class="mt-16 bg-amber-50 p-8 rounded-lg border-l-4 border-amber-500">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Notre Philosophie</h3>
+                <p class="text-gray-600">Chez GLADIATORS MINDSET, chaque personne est un gladiateur moderne : un combattant intrépide, stratégique et constant. C'est cette mentalité de fer que nous cultivons, pour que chacun puisse embrasser sa destinée avec courage, foi et feu intérieur.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOCI Values Section -->
+    <section id="valeurs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">NOS VALEURS CLÉS : <span class="text-amber-500">FOCI</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">L'état d'esprit que nous cultivons chez chaque "gladiateur" moderne</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Focus -->
+                <div class="foci-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Focus</h3>
+                    <p class="text-gray-600">Être pleinement centré sur ses objectifs et ne jamais se laisser distraire.</p>
+                </div>
+                
+                <!-- Force -->
+                <div class="foci-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Force</h3>
+                    <p class="text-gray-600">Puissance intérieure pour dépasser les obstacles et se relever toujours.</p>
+                </div>
+                
+                <!-- Foi -->
+                <div class="foci-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-hands-praying"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Foi</h3>
+                    <p class="text-gray-600">Confiance en soi et en son chemin, moteur d'engagement durable.</p>
+                </div>
+                
+                <!-- Feu -->
+                <div class="foci-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Feu</h3>
+                    <p class="text-gray-600">Feu Intérieur, Passion ardente qui anime chaque action vers la réussite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Programs Section -->
+    <section id="programmes" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">NOS <span class="text-amber-500">PROGRAMMES PHARES</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Des parcours transformateurs pour développer votre esprit de gladiateur</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- LEAD BY FIRE -->
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-amber-500 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">LEAD BY FIRE – Discipline & Impact</h3>
+                        <p class="opacity-90">Un parcours intensif de 4 semaines</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Destiné à installer des habitudes puissantes et à forger une posture de leader impactant.</p>
+                        <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                            <h4 class="font-bold text-gray-800 mb-2">Ce que vous allez acquérir :</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                                    <span>Une discipline inébranlable</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                                    <span>Des outils pour maximiser votre impact</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                                    <span>Une posture de leader authentique</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-full text-sm transition duration-300">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <!-- HAIFUWA -->
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-amber-500 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">HAIFUWA – Renaissance personnelle et professionnelle</h3>
+                        <p class="opacity-90">Une immersion de 3 jours + 1 mois d'accompagnement</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Pour redéfinir sa vision et la traduire en plan d'action concret, regagnant énergie et confiance.</p>
+                        <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                            <h4 class="font-bold text-gray-800 mb-2">Ce que vous allez expérimenter :</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                                    <span>Une redéfinition claire de votre vision</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                                    <span>Un plan d'action concret et personnalisé</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-amber-500 mt-1 mr-2"></i>
+                                    <span>Un regain d'énergie et de confiance en soi</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-full text-sm transition duration-300">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Specialized Programs -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">PROGRAMMES <span class="text-amber-500">SPÉCIALISÉS</span></h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- SELFLOVE -->
+                    <div class="program-card bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-amber-500 text-3xl mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">SELFLOVE</h3>
+                        <p class="text-gray-600 mb-4">Renouer avec l'amour de soi et la confiance intérieure.</p>
+                        <a href="#contact" class="text-amber-500 hover:text-amber-600 font-semibold">En savoir plus →</a>
+                    </div>
+                    
+                    <!-- MINDSET DE REINE -->
+                    <div class="program-card bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-amber-500 text-3xl mb-4">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">MINDSET DE REINE</h3>
+                        <p class="text-gray-600 mb-4">Accompagnement exclusif au féminin pour renforcer mental et émotions.</p>
+                        <a href="#contact" class="text-amber-500 hover:text-amber-600 font-semibold">En savoir plus →</a>
+                    </div>
+                    
+                    <!-- SOI VERS SOI -->
+                    <div class="program-card bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-amber-500 text-3xl mb-4">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">SOI VERS SOI</h3>
+                        <p class="text-gray-600 mb-4">Parcours approfondi pour clarifier ses décisions et s'aligner à soi-même.</p>
+                        <a href="#contact" class="text-amber-500 hover:text-amber-600 font-semibold">En savoir plus →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formats & Tools -->
+            <div class="mt-16 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">FORMATS & <span class="text-amber-500">OUTILS</span></h3>
+                <p class="text-gray-600 mb-6 text-center">Une palette riche et diversifiée pour votre transformation :</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-podcast text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Podcasts inspirants</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-video text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Lives coaching</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-graduation-cap text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Masterclass en ligne</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-book text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Cahiers d'exercices</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-trophy text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Challenges collectifs</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-calendar-star text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Événements immersifs</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-laptop text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Plateforme e-learning</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-amber-100 p-4 rounded-full inline-block mb-2">
+                            <i class="fas fa-users text-amber-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-800 font-medium">Communauté engagée</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-amber-500 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">POURQUOI CHOISIR <span class="text-white">GLADIATORS MINDSET</span> ?</h2>
+                <p class="text-white opacity-90 max-w-2xl mx-auto">Ce qui nous différencie et fait notre force</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="text-3xl mb-4">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cadre structurant</h3>
+                    <p>Un cadre structurant et agile pour éviter l'éparpillement.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="text-3xl mb-4">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Accompagnement sur mesure</h3>
+                    <p>Un accompagnement authentique et adapté à nos réalités africaines.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="text-3xl mb-4">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Méthodologie unique</h3>
+                    <p>À la croisée des meilleures pratiques mondiales et de la sagesse locale.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="text-3xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Communauté soudée</h3>
+                    <p>Une communauté engagée et motivante pour grandir ensemble.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">ILS ONT ADOPTÉ LA <span class="text-amber-500">MENTALITÉ DE GLADIATEUR</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ce que disent ceux qui ont suivi nos programmes</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl">★</div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Le programme LEAD BY FIRE a radicalement transformé ma façon de travailler. En 4 semaines, j'ai développé une discipline qui m'a permis de tripler ma productivité."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ibrahim S.</h4>
+                            <p class="text-gray-500">Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl">★</div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"HAIFUWA a été une renaissance pour moi. Après des années de doute, j'ai enfin une vision claire de mon avenir et les outils pour y parvenir."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Amina D.</h4>
+                            <p class="text-gray-500">Cadre Supérieur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl mr-2">★</div>
+                        <div class="text-amber-500 text-2xl">★</div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"MINDSET DE REINE m'a donné la confiance et les outils pour concilier carrière ambitieuse et épanouissement personnel. Une révélation!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Fatou K.</h4>
+                            <p class="text-gray-500">Directrice Marketing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">PRÊT À DEVENIR UN <span class="text-amber-500">GLADIATEUR MODERNE</span> ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Rejoignez notre communauté et commencez votre transformation dès aujourd'hui</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300">Réserver une session</a>
+                <a href="#programmes" class="bg-transparent hover:bg-white hover:text-gray-900 border-2 border-white text-white font-bold py-3 px-8 rounded-full transition duration-300">Découvrir nos programmes</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">CONTACTEZ <span class="text-amber-500">GLADIATORS MINDSET</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Prêt à transformer votre mentalité? Contactez-nous pour plus d'informations sur nos programmes de coaching.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Informations de Contact</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Adresse</h4>
+                                <p class="text-gray-600"> Niamey Niger avec base au Bénin et à Accra<br>Niger</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Téléphone</h4>
+                                <p class="text-gray-600">+227 92 92 08 08</p>
+                                <p class="text-gray-600">+229 49 97 93 00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">gladiatorsmindset@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Heures d'Ouverture</h4>
+                                <p class="text-gray-600">Lundi - Vendredi: 8h - 18h<br>Samedi: 9h - 13h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-800 mt-10 mb-6">Suivez-Nous</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-100 hover:bg-amber-500 hover:text-white p-3 rounded-full text-gray-700 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-amber-500 hover:text-white p-3 rounded-full text-gray-700 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-amber-500 hover:text-white p-3 rounded-full text-gray-700 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-amber-500 hover:text-white p-3 rounded-full text-gray-700 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Nom Complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-bold mb-2">Téléphone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-bold mb-2">Programme Intéressé</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <option value="">Sélectionnez un programme</option>
+                                <option value="leadbyfire">LEAD BY FIRE</option>
+                                <option value="haifuwa">HAIFUWA</option>
+                                <option value="selflove">SELFLOVE</option>
+                                <option value="reine">MINDSET DE REINE</option>
+                                <option value="soi">SOI VERS SOI</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300">Envoyer le Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <div class="h-96 bg-gray-200">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.238117281352!2d2.109220315303113!3d13.51349099060031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMwJzQ4LjYiTiAywrAwNiczMi4xIlc!5e0!3m2!1sen!2sne!4v1620000000000!5m2!1sen!2sne" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">GLADIATORS <span class="text-amber-500">MINDSET</span></h2>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">La plateforme africaine du développement de la personne, dédiée au leadership, à la discipline, à la clarté et à la résilience.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Navigation</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#accueil" class="text-gray-400 hover:text-amber-500 transition duration-300">Accueil</a></li>
+                            <li><a href="#apropos" class="text-gray-400 hover:text-amber-500 transition duration-300">À Propos</a></li>
+                            <li><a href="#vision" class="text-gray-400 hover:text-amber-500 transition duration-300">Notre Vision</a></li>
+                            <li><a href="#programmes" class="text-gray-400 hover:text-amber-500 transition duration-300">Programmes</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Ressources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#valeurs" class="text-gray-400 hover:text-amber-500 transition duration-300">Valeurs FOCI</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-amber-500 transition duration-300">Contact</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Blog</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Podcasts</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400"> Niamey Niger avec base au Bénin et à Accra </li>
+                            <li class="text-gray-400">+227 92 92 08 08</li>
+                            <li class="text-gray-400">+227 49 97 93 00</li>
+                            <li class="text-gray-400">gladiatorsmindset@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 GLADIATORS MINDSET. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Conditions d'utilisation</a>
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
